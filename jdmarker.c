@@ -1322,6 +1322,9 @@ jinit_marker_reader (j_decompress_ptr cinfo)
   marker->pub.read_restart_marker = read_restart_marker;
 #ifdef ANDROID
   marker->pub.get_sos_marker_position = get_sos_marker_position;
+  // Initialize the SOS marker position to avoid underdefined behavior due to
+  // using a undefined field.
+  marker->pub.current_sos_marker_position = 0;
 #endif /* ANDROID */
 
 
