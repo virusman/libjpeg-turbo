@@ -589,7 +589,7 @@ jinit_color_deconverter (j_decompress_ptr cinfo)
     break;
 
   case JCS_RGB_565:
-    cinfo->out_color_components = RGB_PIXELSIZE;
+    cinfo->out_color_components = 3;  // RGB_PIXELSIZE;  isn't it 2?
     if (cinfo->dither_mode == JDITHER_NONE) {
       if (cinfo->jpeg_color_space == JCS_YCbCr) {
         cconvert->pub.color_convert = ycc_rgb_565_convert;
@@ -635,6 +635,12 @@ jinit_color_deconverter (j_decompress_ptr cinfo)
 #ifdef ANDROID
 
 #ifdef ANDROID_RGB
+
+#define RGB_RED 0 /* Offset of Red in an RGB scanline element */
+#define RGB_GREEN 1
+#define RGB_BLUE 2
+#define RGB_ALPHA 3
+
 METHODDEF(void)
 ycc_rgba_8888_convert (j_decompress_ptr cinfo,
          JSAMPIMAGE input_buf, JDIMENSION input_row,
@@ -1055,6 +1061,10 @@ gray_rgb_565D_convert (j_decompress_ptr cinfo,
   }
 }
 
+#undef RGB_RED
+#undef RGB_GREEN
+#undef RGB_BLUE
+#undef RGB_ALPHA
 #endif /* ANDROID_RGB */
 
 #endif /* ANDROID */
