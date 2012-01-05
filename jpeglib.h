@@ -228,7 +228,6 @@ typedef enum {
 	JCS_EXT_BGRX,		/* blue/green/red/x */
 	JCS_EXT_XBGR,		/* x/blue/green/red */
 	JCS_EXT_XRGB,		/* x/red/green/blue */
-<<<<<<< HEAD
 	/* When out_color_space it set to JCS_EXT_RGBX, JCS_EXT_BGRX,
 	   JCS_EXT_XBGR, or JCS_EXT_XRGB during decompression, the X byte is
 	   undefined, and in order to ensure the best performance,
@@ -239,13 +238,11 @@ typedef enum {
 	JCS_EXT_RGBA,		/* red/green/blue/alpha */
 	JCS_EXT_BGRA,		/* blue/green/red/alpha */
 	JCS_EXT_ABGR,		/* alpha/blue/green/red */
-	JCS_EXT_ARGB		/* alpha/red/green/blue */
-=======
+	JCS_EXT_ARGB,		/* alpha/red/green/blue */
 #ifdef ANDROID_RGB
 	JCS_RGBA_8888,  /* red/green/blue/alpha */
 	JCS_RGB_565     /* red/green/blue in 565 format */
 #endif
->>>>>>> first cut at port of Android extentions
 } J_COLOR_SPACE;
 
 /* DCT/IDCT algorithm options. */
