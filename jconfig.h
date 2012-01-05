@@ -57,6 +57,8 @@
 /* #undef inline */
 #endif
 
+#define INLINE inline
+
 /* Define to `unsigned int' if <sys/types.h> does not define. */
 /* #undef size_t */
 
