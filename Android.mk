@@ -7,7 +7,10 @@ ifneq ($(TARGET_SIMULATOR),true)
 ##################################################
 LOCAL_PATH := $(my-dir)
 include $(CLEAR_VARS)
- 
+
+ifeq ($(ARCH_ARM_HAVE_NEON),true) LOCAL_CFLAGS += -D__ARM_HAVE_NEON
+endif
+
 # From autoconf-generated Makefile
 EXTRA_DIST = simd/nasm_lt.sh simd/jcclrmmx.asm simd/jcclrss2.asm simd/jdclrmmx.asm simd/jdclrss2.asm \
 	simd/jdmrgmmx.asm simd/jdmrgss2.asm simd/jcclrss2-64.asm simd/jdclrss2-64.asm \
