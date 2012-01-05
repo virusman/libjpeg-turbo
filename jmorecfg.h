@@ -324,7 +324,10 @@ typedef int boolean;
 #define RGB_BLUE	2	/* Offset of Blue */
 #define RGB_PIXELSIZE	3	/* JSAMPLEs per RGB scanline element */
 
-<<<<<<< HEAD
+#ifdef ANDROID_RGB
+#define RGB_ALPHA   3   /* Offset of Alpha */
+#endif
+
 #define JPEG_NUMCS 16
 
 #define EXT_RGB_RED        0
@@ -356,14 +359,10 @@ typedef int boolean;
 #define EXT_XRGB_GREEN     2
 #define EXT_XRGB_BLUE      3
 #define EXT_XRGB_PIXELSIZE 4
-=======
+
 #ifdef ANDROID_RGB
 #define RGB_ALPHA   3   /* Offset of Alpha */
 #endif
-
-
-#define JPEG_NUMCS 12
->>>>>>> first cut at port of Android extentions
 
 static const int rgb_red[JPEG_NUMCS] = {
   -1, -1, RGB_RED, -1, -1, -1, EXT_RGB_RED, EXT_RGBX_RED,
