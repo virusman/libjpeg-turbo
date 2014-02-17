@@ -453,7 +453,7 @@ decompress_data (j_decompress_ptr cinfo, JSAMPIMAGE output_buf)
     /* Loop over all DCT blocks to be processed. */
     for (block_row = 0; block_row < block_rows; block_row++) {
       buffer_ptr = buffer[block_row];
-      output_col = start_block * compptr->DCT_scaled_size;
+      output_col = start_block * compptr->_DCT_scaled_size;
       buffer_ptr += start_block;
       for (block_num = start_block; block_num < width_in_blocks; block_num++) {
 	(*inverse_DCT) (cinfo, compptr, (JCOEFPTR) buffer_ptr,

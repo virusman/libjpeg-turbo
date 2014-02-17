@@ -65,7 +65,7 @@
 /* #undef INCOMPLETE_TYPES_BROKEN */
 
 /* libjpeg API version */
-#define JPEG_LIB_VERSION 62
+#define JPEG_LIB_VERSION 80
 
 /* Define to the sub-directory in which libtool stores uninstalled libraries.
    */
