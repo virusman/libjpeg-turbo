@@ -68,6 +68,13 @@ LOCAL_MODULE_TAGS := debug
  
 LOCAL_MODULE := libjpeg
 
+ifeq ($(notdir $(MAKECMDGOALS)),libjpeg.a)
+  LOCAL_SRC_FILES +=  $(libsimd_SOURCES_DIST)
+  include $(BUILD_STATIC_LIBRARY)
+  include $(CLEAR_VARS)
+  LOCAL_MODULE := dummy
+endif
+
 include $(BUILD_SHARED_LIBRARY)
 
 ######################################################
